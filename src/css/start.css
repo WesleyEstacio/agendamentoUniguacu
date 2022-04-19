@@ -1,0 +1,77 @@
+/*----- MAIN -----*/
+
+main > .container
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+main section.cadastrar
+{
+    padding: 10px;
+    margin: 30px 0;
+    width: 40%;
+    min-width: 400px;
+    background-color: var(--white);
+    border-radius: 10px;
+    height: 80vh;
+}
+
+main section.cadastrar h2
+{
+    color: var(--blue);
+    padding: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 32px;
+}
+
+main section.cadastrar form
+{
+    padding: 0 2%;
+    text-align: center;
+}
+
+main section.cadastrar form input
+{
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 2px solid var(--blue);
+}
+
+main section.cadastrar form input:focus
+{
+    border: 0;
+    outline: 2px solid var(--blue);
+}
+
+main section.cadastrar form p
+{
+    color: var(--black);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+main section.cadastrar form a
+{
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+main section.cadastrar form input[type='submit']
+{
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 300;
+}
