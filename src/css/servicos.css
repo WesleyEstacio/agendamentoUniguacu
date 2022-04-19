@@ -1,0 +1,33 @@
+main > .container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+main section.servicos
+{
+    display: grid;
+    width: 100%;
+    gap: 10%;
+    padding: 0 2%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+main section.servicos a
+{
+    text-decoration: none;
+    border-radius: 15px;
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+    background-color: var(--blue);
+    font-size: 23px;
+    transition: 0.2s;
+}
+
+main section.servicos a:hover
+{
+    filter: brightness(0.9);
+}

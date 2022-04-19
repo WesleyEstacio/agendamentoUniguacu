@@ -3,21 +3,22 @@
 main > .container
 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
 }
 
 main section.cadastrar
 {
     padding: 10px;
-    margin: 30px 0;
     width: 40%;
     min-width: 400px;
     background-color: var(--white);
-    border-radius: 10px;
+    border-radius: 15px;
     height: 80vh;
 }
 
-main section.cadastrar h2
+main section.cadastrar h2 
 {
     color: var(--blue);
     padding: 20px;
@@ -74,4 +75,10 @@ main section.cadastrar form input[type='submit']
     margin-top: 30px;
     font-size: 20px;
     font-weight: 300;
+    transition: 0.2s;
+}
+
+main section.cadastrar form input[type='submit']:hover
+{
+    filter: brightness(0.9);
 }
