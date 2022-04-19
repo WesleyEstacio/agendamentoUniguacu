@@ -17,4 +17,8 @@ app.get('/servicos', (req, res) => {
     res.sendFile(__dirname+'/src/servico.html');
 });
 
+app.get('/horario', (req, res) => {
+    res.sendFile(__dirname+'/src/horario.html');
+});
+
 app.listen(8080)
