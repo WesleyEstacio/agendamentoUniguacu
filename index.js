@@ -22,7 +22,7 @@ app.get('/horario', (req, res) => {
     res.sendFile(__dirname+'/src/horario.html');
 });
 
-app.post('/add-usuario',(req,res) => {
+app.post('/add-aluno',(req,res) => {
     Usuario.create({
       usuario_nome:req.body.nome,
       usuario_cpf:req.body.cpf,
