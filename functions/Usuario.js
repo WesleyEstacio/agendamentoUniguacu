@@ -1,5 +1,4 @@
 const { sequelize, Sequelize } = require('../conexao')
-const db = require('../conexao')
 
 const Usuario = sequelize.define('usuarios',{
     usuario_nome:{

@@ -1,8 +1,18 @@
 const Usuario = require('./Usuario')
-const user = 'Renan Schuartz'
+const id = 3
+const nome = 'Wesley Estacio'
+const senha = '123123'
 
-const project = Usuario.findOne({ where: { usuario_nome: user } });
+const data = Usuario.findOne({ where: { id: id } });
 
-project
-    .then((data) => console.log(data.dataValues))
+data.then((data) => {
+    let name = data.dataValues.usuario_nome
+    let password = data.dataValues.usuario_senha
+
+    if(name === nome && password === senha){
+        console.log('Deu Boa')
+    }else{
+        console.log('Nao deu boa')
+    }
+})
 
