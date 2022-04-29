@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento Uniguaçu</title>
     <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/servicos.css">
+    <link rel="stylesheet" href="./css/agendamento.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,10 +22,27 @@
     <main>
         <div class="container">
             <section class="servicos">
-                <a href="">Geral</a>
-                <a href="">Financeiro</a>
-                <a href="">Empresa Junior</a>
+                <h2>Selecione o serviço:</h2>
+
+                <select>
+                    <option>Geral</option>
+                    <option>Financeiro</option>
+                    <option>Empresa Junior</option>
+                </select>
             </section><!-- Servicos -->
+
+            <section class="horario">
+                <h2>Selecione o horário:</h2>
+
+                <input type="date">
+                <input type="time">
+            </section><!-- Servicos -->
+
+            <button type="submit">Agendar</button>
+
+            <footer>
+                <p>Todos os direitos reservados &copy;</p>
+            </footer>
         </div><!-- Container -->
     </main><!-- Main -->
 </body>

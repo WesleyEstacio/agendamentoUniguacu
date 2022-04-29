@@ -15,7 +15,7 @@
 html,body
 {
     height: 100%;
-    background-color: var(--black);
+    background-color: var(--white);
 }
 
 .container
@@ -31,6 +31,7 @@ header
     padding: 1rem;
     background-color: var(--white);
     display: flex;
+    border-bottom: 1px solid var(--black);
 }
 
 header > .container
@@ -39,15 +40,15 @@ header > .container
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
     background-color: var(--white);
+    padding: 10px 0;
 }
 
 header > .container h2
 {
     font-weight: 400;
 }
-
-
 
 /*----- Animação Boi Bombado -----*/
 

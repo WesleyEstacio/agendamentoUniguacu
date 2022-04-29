@@ -1,0 +1,47 @@
+main {
+    margin-top: 30px;
+    display: flex;
+    text-align: center;
+}
+
+main h2 {
+    font-weight: 400;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+main select {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+main input {
+    font-size: 20px;
+    padding: 10px;
+}
+
+main button {
+    margin-top: 60px;
+    padding: 15px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 8px;
+    outline: none;
+    border: 0;
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+main button:hover {
+    filter: brightness(0.9);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+
+    padding: 8px 2%;
+}

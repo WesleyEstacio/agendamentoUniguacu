@@ -14,12 +14,8 @@ app.get('/cadastro', (req, res) => {
     res.sendFile(__dirname+'/src/cadastro.html');
 });
 
-app.get('/servicos', (req, res) => {
-    res.sendFile(__dirname+'/src/servico.html');
-});
-
-app.get('/horarios', (req, res) => {
-    res.sendFile(__dirname+'/src/horarios.html');
+app.get('/agendamento', (req, res) => {
+    res.sendFile(__dirname+'/src/agendamento.html');
 });
 
 app.post('/add-aluno',(req,res) => {
