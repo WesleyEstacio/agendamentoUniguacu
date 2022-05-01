@@ -33,15 +33,21 @@ app.post('/add-usuario',(req,res) => {
 
 app.post('/valida-usuario',(req,res) => {
   
-  const emailUser = req.body.email
-  const senhaUser = req.body.senha
+  const emailUser = req.body.email    //Pega email digitado pelo usuario
+  const senhaUser = req.body.senha    //Pega senha digitado pelo usuario
 
   id = req.body.email
 
   const data = Usuario.findOne({ where: { usuario_email: id } });
   data.then((data) => {
-    let email = data.dataValues.usuario_email
-    let password = data.dataValues.usuario_senha
+    let email = data.dataValues.usuario_email     //Pega email no banco de dados
+    let password = data.dataValues.usuario_senha  //Pega senha no banco de dados
+
+    if (emailUser === email && senhaUser === password ) {
+      res.redirect('/agendamento')
+    } else {
+      res.redirect('/')
+    }
 
     console.log(email)
     console.log(password)
@@ -49,7 +55,7 @@ app.post('/valida-usuario',(req,res) => {
     console.log(senhaUser)
   })
 
-  res.send('Deu boa')
+  
 })
 
 app.listen(8080)
