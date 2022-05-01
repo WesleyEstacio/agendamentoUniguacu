@@ -38,7 +38,7 @@ app.post('/valida-usuario',(req,res) => {
 
   id = req.body.email
 
-  const data = Usuario.findOne({ where: { id: id } });
+  const data = Usuario.findOne({ where: { usuario_email: id } });
   data.then((data) => {
     let email = data.dataValues.usuario_email
     let password = data.dataValues.usuario_senha
