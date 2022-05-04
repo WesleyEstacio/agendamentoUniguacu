@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const Usuario =require('./functions/Usuario')
+const validar = require('./functions/validar')
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -42,11 +43,9 @@ app.post('/valida-usuario',(req,res) => {
     let email = data.dataValues.usuario_email     //Pega email no banco de dados
     let password = data.dataValues.usuario_senha  //Pega senha no banco de dados
 
-    if (emailUser === email && senhaUser === password ) {
-      res.redirect('/agendamento')
-    } else {
-      res.redirect('/')
-    }
+    const teste = validar(email,password,emailUser,senhaUser)
+
+    console.log(teste)
   })
   
 })
