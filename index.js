@@ -24,10 +24,10 @@ app.post('/add-usuario',(req,res) => {
       usuario_cpf:req.body.cpf,
       usuario_email:req.body.email,
       usuario_senha:req.body.senha
-    }).then(function(){
+    }).then(() => {
       res.redirect('/')
-    }).catch(function(erro){
-      res.send("Usuario não cadastrado"+erro)
+    }).catch((erro) => {
+      res.redirect('/cadastro')
     })
 })
 
@@ -35,8 +35,7 @@ app.post('/valida-usuario',(req,res) => {
   
   const emailUser = req.body.email    //Pega email digitado pelo usuario
   const senhaUser = req.body.senha    //Pega senha digitado pelo usuario
-
-  id = req.body.email
+  const id = req.body.email           // Define o parametro de busca no banco de dados
 
   const data = Usuario.findOne({ where: { usuario_email: id } });
   data.then((data) => {
@@ -48,15 +47,8 @@ app.post('/valida-usuario',(req,res) => {
     } else {
       res.redirect('/')
     }
-
-    console.log(email)
-    console.log(password)
-    console.log(emailUser)
-    console.log(senhaUser)
   })
-
   
 })
 
 app.listen(8080)
-
