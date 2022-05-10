@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
-const Usuario =require('./functions/Usuario')
-const validar = require('./functions/validar')
+const Usuario =require('./services/Usuario')
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -33,21 +32,26 @@ app.post('/add-usuario',(req,res) => {
 })
 
 app.post('/valida-usuario',(req,res) => {
-  
-  const emailUser = req.body.email    //Pega email digitado pelo usuario
-  const senhaUser = req.body.senha    //Pega senha digitado pelo usuario
-  const id = req.body.email           // Define o parametro de busca no banco de dados
+
+  const emailUser = req.body.email
+  const senhaUser = req.body.senha
+  const id = req.body.email
+
+  if( id === '') {
+    res.redirect('/')
+  }
 
   const data = Usuario.findOne({ where: { usuario_email: id } });
   data.then((data) => {
-    let email = data.dataValues.usuario_email     //Pega email no banco de dados
-    let password = data.dataValues.usuario_senha  //Pega senha no banco de dados
+    const email = data.dataValues.usuario_email     //Pega email no banco de dados
+    const password = data.dataValues.usuario_senha  //Pega senha no banco de dados
 
-    const teste = validar(email,password,emailUser,senhaUser)
-
-    console.log(teste)
+    if (emailUser === email && senhaUser === password) {
+      res.redirect('/agendamento')
+    } else {
+      res.redirect('/')
+    }
   })
-  
 })
 
 app.listen(8080)

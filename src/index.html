@@ -26,9 +26,9 @@
 
                 <h2>Login</h2>
 
-                <form id="login" action="/valida-usuario" method="post">
-                    <input type="email" name="email" placeholder="E-mail" required>
-                    <input type="password" name="senha" placeholder="Senha" required>
+                <form id="login" method="post" action="/valida-usuario">
+                    <input type="email" name="email" placeholder="E-mail" id="email">
+                    <input type="password" name="senha" placeholder="Senha" id="senha">
 
                     <p>Não tem cadastro?</p>
                     <a href="/cadastro">Cadastrar</a>
@@ -37,10 +37,11 @@
                 </form><!-- Form -->
             </section><!-- Cadastrar -->
 
-            <footer>
-                <p>Todos os direitos reservados &copy;</p>
-            </footer>
         </div> <!-- Container -->
     </main> <!-- Main -->
+
+    <footer>
+        <p>Todos os direitos reservados &copy;</p>
+    </footer>
 </body>
 </html>
