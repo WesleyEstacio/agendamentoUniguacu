@@ -21,25 +21,26 @@
 
     <main>
         <div class="container">
-            <section class="servicos">
-                <h2>Selecione o serviço:</h2>
+            <form action="/add-horario" method="post">
+                <section class="servicos">
+                    <h2>Selecione o serviço:</h2>
 
-                <select>
-                    <option>Geral</option>
-                    <option>Financeiro</option>
-                    <option>Empresa Junior</option>
-                </select>
-            </section><!-- Servicos -->
+                    <select id="servico" name="servico">
+                        <option>Geral</option>
+                        <option>Financeiro</option>
+                        <option>Empresa Junior</option>
+                    </select>
+                </section><!-- Servicos -->
 
-            <section class="horario">
-                <h2>Selecione o horário:</h2>
+                <section class="horario">
+                    <h2>Selecione o horário:</h2>
 
-                <input type="date">
-                <input type="time">
-            </section><!-- Servicos -->
+                    <input type="date" id="data" name="data">
+                    <input type="time" id="hora" name="hora">
+                </section><!-- Servicos -->
 
-            <button type="submit">Agendar</button>
-
+                <button type="submit">Agendar</button>
+            </form>
         </div><!-- Container -->
     </main><!-- Main -->
 

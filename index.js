@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const Usuario =require('./services/Usuario')
+const Horario =require('./services/Horario')
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -51,6 +52,18 @@ app.post('/valida-usuario',(req,res) => {
     } else {
       res.redirect('/')
     }
+  })
+})
+
+app.post('/add-horario',(req,res) => {
+  Horario.create({
+    horario_servico:req.body.servico,
+    horario_data:req.body.data,
+    horario_hora:req.body.hora
+  }).then(() => {
+    res.redirect('/')
+  }).catch((erro) => {
+    res.redirect('/agendamento')
   })
 })
 
