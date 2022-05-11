@@ -14,6 +14,6 @@ const Horario = sequelize.define('horario',{
     },
 })
 
-Horario.sync()
+//Horario.sync()
 
 module.exports = Horario
