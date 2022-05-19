@@ -34,14 +34,15 @@ app.post('/add-usuario',(req,res) => {
 
 app.post('/valida-usuario',(req,res) => {
 
-  const emailUser = req.body.email
-  const senhaUser = req.body.senha
   const id = req.body.email
 
-  if( id === '') {
-    res.redirect('/')
+  if(id == '') {
+    res.send('Email Inválido')
   }
 
+  const emailUser = req.body.email
+  const senhaUser = req.body.senha
+  
   const data = Usuario.findOne({ where: { usuario_email: id } });
   data.then((data) => {
     const email = data.dataValues.usuario_email     //Pega email no banco de dados
@@ -67,4 +68,6 @@ app.post('/add-horario',(req,res) => {
   })
 })
 
+
+console.log('HTTP Server Running')
 app.listen(8080)
