@@ -34,5 +34,3 @@ const Usuario = sequelize.define('usuarios',{
 
 Usuario.sync()
 Horario.sync()
-
-module.exports = Horario
