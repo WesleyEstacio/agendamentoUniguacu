@@ -45,7 +45,7 @@ app.post('/valida-usuario',(req,res) => {
   const id = req.body.email
 
   if(id == '') {
-    res.send('Email Inválido')
+    res.redirect('/cadastro')
   }
 
   const emailUser = req.body.email
@@ -72,7 +72,7 @@ app.post('/add-horario',(req,res) => {
   }).then(() => {
     res.redirect('/sucesso')
   }).catch((erro) => {
-    res.send('/error')
+    res.redirect('/error')
   })
 })
 
