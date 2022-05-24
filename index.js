@@ -19,6 +19,10 @@ app.get('/agendamento', (req, res) => {
     res.sendFile(__dirname+'/src/agendamento.html');
 });
 
+app.get('/sucesso', (req, res) => {
+  res.sendFile(__dirname+'/src/sucesso.html');
+});
+
 app.post('/add-usuario',(req,res) => {
     Usuario.create({
       usuario_nome:req.body.nome,
@@ -62,9 +66,9 @@ app.post('/add-horario',(req,res) => {
     horario_data:req.body.data,
     horario_hora:req.body.hora
   }).then(() => {
-    res.redirect('/')
+    res.redirect('/sucesso')
   }).catch((erro) => {
-    res.redirect('/agendamento')
+    res.send('Não deu boa não')
   })
 })
 
