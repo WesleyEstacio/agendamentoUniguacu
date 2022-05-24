@@ -23,6 +23,10 @@ app.get('/sucesso', (req, res) => {
   res.sendFile(__dirname+'/src/sucesso.html');
 });
 
+app.get('/error', (req, res) => {
+  res.sendFile(__dirname+'/src/error.html');
+});
+
 app.post('/add-usuario',(req,res) => {
     Usuario.create({
       usuario_nome:req.body.nome,
@@ -55,7 +59,7 @@ app.post('/valida-usuario',(req,res) => {
     if (emailUser === email && senhaUser === password) {
       res.redirect('/agendamento')
     } else {
-      res.redirect('/')
+      res.redirect('/error')
     }
   })
 })
@@ -68,7 +72,7 @@ app.post('/add-horario',(req,res) => {
   }).then(() => {
     res.redirect('/sucesso')
   }).catch((erro) => {
-    res.send('Não deu boa não')
+    res.send('/error')
   })
 })
 
