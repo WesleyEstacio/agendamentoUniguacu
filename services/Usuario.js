@@ -1,6 +1,6 @@
 const { sequelize, Sequelize } = require('../conexao')
 
-const Usuario = sequelize.define('usuarios',{
+const Usuario = sequelize.define('usuarios', {
     usuario_nome:{
         type: Sequelize.STRING
     },
@@ -17,7 +17,5 @@ const Usuario = sequelize.define('usuarios',{
         type: Sequelize.STRING
     },
 })
-
-//Usuario.sync()
 
 module.exports = Usuario

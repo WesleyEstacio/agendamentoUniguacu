@@ -12,7 +12,7 @@ const Horario = sequelize.define('horario',{
     horario_hora:{
         type: Sequelize.TIME
     },
-})
+})      //Criação das tabelas de horário
 
 const Usuario = sequelize.define('usuarios',{
     usuario_nome:{
@@ -30,7 +30,7 @@ const Usuario = sequelize.define('usuarios',{
     usuario_senha:{
         type: Sequelize.STRING
     },
-})
+})      //Criação das tabelas de usuários
 
 Usuario.sync()
 Horario.sync()

@@ -1,6 +1,6 @@
 const { sequelize, Sequelize } = require('../conexao')
 
-const Horario = sequelize.define('horario',{
+const Horario = sequelize.define('horario', {
     horario_servico:{
         type: Sequelize.STRING
     },
@@ -13,7 +13,5 @@ const Horario = sequelize.define('horario',{
         type: Sequelize.TIME
     },
 })
-
-//Horario.sync()
 
 module.exports = Horario
