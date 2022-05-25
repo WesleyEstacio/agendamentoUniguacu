@@ -29,6 +29,20 @@ main a {
     transition: 0.2s;
 }
 
+main a:nth-of-type(2) {
+    border: 0;
+    text-decoration: underline;
+    color: var(--blue);
+
+    transition: 0.2s;
+}
+
+main a:nth-of-type(2):hover {
+    border: 0;
+    background-color: transparent;
+    color: var(--blue);
+}
+
 main a:hover {
    filter: brightness(0.9);
    background-color: var(--blue);
