@@ -35,7 +35,7 @@ app.get('/error', (req, res) => {
 
 app.post('/validar-usuario',(req,res) => {    //Validação do login
 
-  const id = req.body.email
+  let id = req.body.email
 
   
   if(id == '') {          //Verificar campo vazio
@@ -46,10 +46,10 @@ app.post('/validar-usuario',(req,res) => {    //Validação do login
     
     const data = Usuario.findOne({ where: { usuario_email: id } });
     data.then((data) => {
+
       const email = data.dataValues.usuario_email     //Pegar email no banco de dados
       const password = data.dataValues.usuario_senha  //Pegar senha no banco de dados
-  
-      
+
       if (emailUser === email && senhaUser === password) {    //Verificação do login
         res.redirect('/agendamento')
       } else {
