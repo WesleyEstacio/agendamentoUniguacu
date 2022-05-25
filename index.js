@@ -35,7 +35,7 @@ app.post('/add-usuario',(req,res) => {
       usuario_senha:req.body.senha
     }).then(() => {
       res.redirect('/')
-    }).catch((erro) => {
+    }).catch(() => {
       res.redirect('/cadastro')
     })
 })
@@ -46,22 +46,22 @@ app.post('/valida-usuario',(req,res) => {
 
   if(id == '') {
     res.redirect('/cadastro')
-  }
-
-  const emailUser = req.body.email
-  const senhaUser = req.body.senha
+  }else {
+    const emailUser = req.body.email
+    const senhaUser = req.body.senha
+    
+    const data = Usuario.findOne({ where: { usuario_email: id } });
+    data.then((data) => {
+      const email = data.dataValues.usuario_email     //Pega email no banco de dados
+      const password = data.dataValues.usuario_senha  //Pega senha no banco de dados
   
-  const data = Usuario.findOne({ where: { usuario_email: id } });
-  data.then((data) => {
-    const email = data.dataValues.usuario_email     //Pega email no banco de dados
-    const password = data.dataValues.usuario_senha  //Pega senha no banco de dados
-
-    if (emailUser === email && senhaUser === password) {
-      res.redirect('/agendamento')
-    } else {
-      res.redirect('/error')
-    }
-  })
+      if (emailUser === email && senhaUser === password) {
+        res.redirect('/agendamento')
+      } else {
+        res.redirect('/error')
+      }
+    })
+  }
 })
 
 app.post('/add-horario',(req,res) => {
